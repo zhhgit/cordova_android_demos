@@ -1,2 +1,2 @@
-# cordova_android_demos
-cordova_android_demos
+# cordova_cli_android_demo
+cordova_cli_android_demo
