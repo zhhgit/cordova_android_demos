@@ -29,7 +29,7 @@ var app = {
             });
         });
 
-        document.getElementById("#btn-plugin-echo").addEventListener("click",function () {
+        document.getElementById("btn-plugin-echo").addEventListener("click",function () {
             //调用Echo插件的echo方法
             cordova.exec(function(resp) {
                     alert("success");
