@@ -18,7 +18,7 @@ var app = {
     },
 
     onDeviceReady: function() {
-        document.getElementById("take-picture-button").addEventListener("click", function() {
+        document.getElementById("btn-take-picture").addEventListener("click", function() {
             //由于camera插件启动了一个外部Activity，在成功或失败回调之前，可能会被kill掉（低内存），在onPause()和onResume()保存和恢复状态
             appState.takingPicture = true;
             navigator.camera.getPicture(cameraSuccessCallback, cameraFailureCallback,                {
@@ -27,6 +27,21 @@ var app = {
                 targetWidth: 250,
                 targetHeight: 250
             });
+        });
+
+        document.getElementById("#btn-plugin-echo").addEventListener("click",function () {
+            //调用Echo插件的echo方法
+            cordova.exec(function(resp) {
+                    alert("success");
+                    alert(resp);
+                },
+                function(resp) {
+                    alert("fail");
+                    alert(resp);
+                },
+                "Echo",
+                "echo",
+                ["hehe"]);
         });
     },
 
